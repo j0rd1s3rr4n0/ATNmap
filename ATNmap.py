@@ -1,8 +1,10 @@
  #!/usr/bin/env python
 # encoding: utf-8
 import os
+# replace in conditionals 'si' & 'no' for in list
 si_list = ['si','yes','s','y']
 no_list = ['no','n']
+
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------
 #                                               MENU PRINCIPAL
