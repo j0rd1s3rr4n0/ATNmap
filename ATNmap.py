@@ -1,6 +1,8 @@
  #!/usr/bin/env python
 # encoding: utf-8
 import os
+si_list = ['si','yes','s','y']
+no_list = ['no','n']
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------
 #                                               MENU PRINCIPAL
@@ -54,6 +56,7 @@ while True:
 
 
     selectorMenu = raw_input('Seleccione una opcion > ')
+    selectorMenu = selectorMenu.lower()
 #............................................................................................................................................
 #                                    OPCION 1, MENU ESCANER DE PUERTOS
 
@@ -94,9 +97,11 @@ while True:
 
         while True:
             selectorPuerto = raw_input('Seleccione un opcion > ')
+            selectorPuerto = selectorPuerto.lower()
 
 
-            versionSistema = raw_input('Teclee SI (minuscula), para saber la version del sistema [-sV] enter para NO > ')
+            versionSistema = raw_input('Teclee SI, para saber la version del sistema [-sV] enter para NO > ')
+            versionSistema = versionSistema.lower()
 
             if versionSistema == 'si':
                 versionSistema = '-sV '
@@ -104,7 +109,9 @@ while True:
                 versionSistema = ''
 
             puerto = raw_input('ingrese -F para los 100 puertos mas comunes, -p para un rango de puertos y -p- para todos los puertos > ')
-            noPing = raw_input('Quiere hacer ping en el objetivo? SI (minuscula) o enter para NO > ')
+            puerto = puerto.lower()
+            noPing = raw_input('Quiere hacer ping en el objetivo? SI o enter para NO > ')
+            noPing = noPing.lower()
 
             if noPing == 'si':
                 noPing = '-Pn '
@@ -112,7 +119,9 @@ while True:
                 noPing = ''
 
             host = raw_input('ingrese el host > ')
+            host = host.lower()
             vervosidad = raw_input('Quiere vervosidad? -v normal -vv mucha, enter ninguna > ')
+            vervosidad = vervosidad.lower()
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #                               CONSTRUCTORES Y EJECUCION
@@ -388,10 +397,13 @@ while True:
         ''')
 
         selectorScript = raw_input('Seleccione una opcion > ')
+        selectorScript = selectorScript.lower()
 
         host = raw_input('ingrese el host > ')
+        host = host.lower()
 
         vervosidad = raw_input('Quiere vervosidad? -v normal -vv mucha, enter ninguna > ')
+        vervosidad = vervosidad.lower()
 
 
         if selectorScript == '1':
@@ -514,47 +526,6 @@ while True:
             comandoscript = ComandoScript(host,vervosidad)
             print(chr(27)+"[3;32m"'EJECUTANDO COMANDO =========> '+ comandoscript.final)+chr(27)+"[0m"
             os.system(comandoscript.final)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #----------------------------------------------------------------------------------------------------------------------------------------------
